@@ -1,0 +1,42 @@
+from agents.dqn_agent import DQNAgent
+import random
+
+agent = DQNAgent(
+    state_size=2,
+    action_size=5
+)
+
+# Fill Replay Buffer
+for _ in range(100):
+
+    state = [
+        random.randint(0, 100),
+        random.randint(0, 30)
+    ]
+
+    action = random.randint(0, 4)
+
+    reward = random.randint(100, 500)
+
+    next_state = [
+        random.randint(0, 100),
+        random.randint(0, 30)
+    ]
+
+    done = random.choice([True, False])
+
+    agent.remember(
+        state,
+        action,
+        reward,
+        next_state,
+        done
+    )
+
+print("Memory Size :", len(agent.memory))
+
+agent.train()
+
+print("Training Step Completed Successfully.")
+
+print("Current Epsilon :", agent.epsilon)
