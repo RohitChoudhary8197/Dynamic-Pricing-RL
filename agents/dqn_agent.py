@@ -176,3 +176,35 @@ class DQNAgent:
             if self.epsilon < self.epsilon_min:
 
                 self.epsilon = self.epsilon_min
+
+    def save_model(
+        self,
+        filename="models/dqn_model.pth"
+    ):
+        """
+        Save the trained DQN model.
+        """
+
+        torch.save(
+            self.model.state_dict(),
+            filename
+        )
+
+        print(f"DQN model saved to {filename}")
+
+
+    def load_model(
+        self,
+        filename="models/dqn_model.pth"
+    ):
+        """
+        Load a trained DQN model.
+        """
+
+        self.model.load_state_dict(
+            torch.load(filename)
+        )
+
+        self.model.eval()
+
+        print(f"DQN model loaded from {filename}")
