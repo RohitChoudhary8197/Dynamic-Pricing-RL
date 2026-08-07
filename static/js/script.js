@@ -12,14 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const cards = document.querySelectorAll(".feature-card, .stat-card, .metric-card, .content-card");
-    cards.forEach((card, index) => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(12px)";
+    const revealItems = document.querySelectorAll(
+        ".hero-title, .hero-description, .hero-buttons, .hero-tech, .ai-visual-card, .prediction-card, .feature-card, .stat-card, .metric-card, .content-card"
+    );
+
+    revealItems.forEach((item, index) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(16px)";
+        item.style.transition = "all 0.7s ease";
         setTimeout(() => {
-            card.style.transition = "all 0.5s ease";
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, 80 * index);
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+        }, 90 * index);
     });
 });
