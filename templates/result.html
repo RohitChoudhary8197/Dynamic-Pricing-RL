@@ -10,23 +10,39 @@ Result | Dynamic Pricing AI
         <div class="section-heading text-center">
             <div class="section-badge">
                 <i class="bi bi-graph-up-arrow"></i>
-                Recommended outcome
+                AI pricing recommendation
             </div>
-            <h2>Your pricing strategy is ready</h2>
-            <p>Based on the values you entered, the AI engine has generated a polished recommendation for your next
-                move.</p>
+            <h2>Decision-ready <span>pricing insight</span></h2>
+            <p>The model has generated a live recommendation based on your current inventory, remaining time and demand
+                conditions.</p>
         </div>
 
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-8">
-                <div class="content-card text-center">
-                    <div class="pricing-display mb-4">
-                        <div class="pricing-icon"><i class="bi bi-currency-rupee"></i></div>
-                        <small>Recommended price</small>
-                        <h2>{{ price }}</h2>
-                        <div class="confidence">
-                            <span>Expected revenue</span>
-                            <strong>{{ revenue }}</strong>
+            <div class="col-lg-10">
+                <div class="content-card premium-result-card">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="pricing-display mb-4">
+                                <div class="pricing-icon"><i class="bi bi-currency-rupee"></i></div>
+                                <small>Recommended price</small>
+                                <h2>{{ price }}</h2>
+                                <div class="confidence">
+                                    <span>Projected revenue</span>
+                                    <strong>{{ revenue }}</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="result-summary">
+                                <div class="summary-pill"><i class="bi bi-diagram-3"></i> {{ strategy }}</div>
+                                <div class="summary-pill"><i class="bi bi-box-seam"></i> {{ demand }} tickets likely to
+                                    sell</div>
+                                <div class="summary-pill"><i class="bi bi-clock-history"></i> {{ days_left }} days
+                                    remaining</div>
+                                <div class="summary-pill"><i class="bi bi-clipboard-data"></i> {{ score }}% efficiency
+                                    score</div>
+                            </div>
                         </div>
                     </div>
 
@@ -39,19 +55,19 @@ Result | Dynamic Pricing AI
                         </div>
                         <div class="col-md-4">
                             <div class="metric-card">
-                                <small>Days left</small>
-                                <h3>{{ days_left|default('—') }}</h3>
+                                <small>Projected inventory</small>
+                                <h3>{{ projected_inventory|default('—') }}</h3>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="metric-card">
                                 <small>Strategy</small>
-                                <h3>Balanced</h3>
+                                <h3>Adaptive</h3>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-4">
+                    <div class="mt-4 text-center">
                         <a href="/analytics" class="btn btn-primary hero-btn me-2">View analytics</a>
                         <a href="/contact" class="btn btn-outline-light hero-btn">Talk to the team</a>
                     </div>

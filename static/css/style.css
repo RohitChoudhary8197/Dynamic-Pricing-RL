@@ -19,12 +19,24 @@ html {
 
 body {
     margin: 0;
-    background: linear-gradient(135deg, #040816 0%, #09142a 45%, #03060d 100%);
+    background:
+        linear-gradient(135deg, #040816 0%, #09142a 45%, #03060d 100%);
     color: var(--text);
     font-family: Inter, Arial, Helvetica, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 90%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 body::before {
@@ -59,10 +71,11 @@ a {
 ========================================= */
 
 .navbar {
-    background: rgba(7, 11, 23, 0.85) !important;
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(7, 11, 23, 0.88) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 16px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .navbar-brand {
@@ -439,12 +452,11 @@ a {
 }
 
 .prediction-card {
-    background: var(--dark-card);
-    border: 1px solid var(--border);
+    background: linear-gradient(145deg, rgba(17, 25, 44, 0.95), rgba(10, 16, 30, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 25px;
     padding: 35px;
     backdrop-filter: blur(20px);
-
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
@@ -501,12 +513,9 @@ a {
 .feature-card {
     height: 100%;
     padding: 30px;
-
-    background: var(--dark-card);
-    border: 1px solid var(--border);
-
+    background: linear-gradient(145deg, rgba(17, 25, 44, 0.95), rgba(10, 16, 30, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
-
     transition: 0.3s;
 }
 
@@ -682,9 +691,30 @@ footer {
 }
 
 .footer-section {
-    background: #050810;
-    border-top: 1px solid var(--border);
+    background: linear-gradient(90deg, #050810, #081120 70%, #050810);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 24px 0;
+}
+
+.result-summary {
+    display: grid;
+    gap: 12px;
+}
+
+.summary-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 999px;
+    background: rgba(79, 140, 255, 0.12);
+    color: #dce7ff;
+    border: 1px solid rgba(79, 140, 255, 0.16);
+}
+
+.premium-result-card {
+    padding: 32px;
+    background: linear-gradient(145deg, rgba(17, 25, 44, 0.96), rgba(7, 12, 24, 0.96));
 }
 
 @media (max-width: 576px) {
