@@ -2,112 +2,61 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description"
+        content="Dynamic pricing powered by deep reinforcement learning for smarter revenue decisions.">
     <title>{% block title %}Dynamic Pricing AI{% endblock %}</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
         <div class="container">
-
             <a class="navbar-brand fw-bold" href="/">
                 <i class="bi bi-cpu-fill"></i>
                 Dynamic Pricing AI
             </a>
 
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbar">
-
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
-            <div class="collapse navbar-collapse"
-                 id="navbar">
-
+            <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/analytics">Analytics</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/analytics">Analytics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                 </ul>
-
             </div>
-
         </div>
-
     </nav>
 
-    <!-- Main Content -->
     <main>
-
-        {% block content %}
-
-        {% endblock %}
-
+        {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light mt-5 py-4">
-
-        <div class="container text-center">
-
-            <p class="mb-1">
-
-                Dynamic Pricing using Deep Reinforcement Learning
-
-            </p>
-
-            <small>
-
-                Developed using Flask, PyTorch, Gymnasium and Bootstrap 5
-
-            </small>
-
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-8">
+                    <p class="mb-1 fw-semibold">Dynamic Pricing using Deep Reinforcement Learning</p>
+                    <small>Built with Flask, PyTorch, Gymnasium and Bootstrap 5 for modern AI-driven decision
+                        support.</small>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a class="btn btn-outline-light btn-sm" href="/contact">Get in touch</a>
+                </div>
+            </div>
         </div>
-
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
 </body>
 
 </html>

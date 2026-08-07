@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}
+About | Dynamic Pricing AI
+{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <div class="hero-badge mb-4">
+                    <i class="bi bi-lightbulb"></i>
+                    About the platform
+                </div>
+                <h1 class="hero-title">A smarter way to price with confidence.</h1>
+                <p class="hero-description">
+                    This project combines reinforcement learning, demand modeling and an interactive web interface to
+                    help teams make fast, data-driven pricing decisions.
+                </p>
+                <div class="hero-tech">
+                    <span><i class="bi bi-check-circle-fill"></i> Adaptive strategy</span>
+                    <span><i class="bi bi-check-circle-fill"></i> Revenue focused</span>
+                    <span><i class="bi bi-check-circle-fill"></i> Modern UI</span>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="content-card">
+                    <h4 class="mb-3">Mission</h4>
+                    <p class="mb-3">
+                        The system learns pricing policies from simulated market behavior so businesses can test
+                        different approaches without relying only on manual judgment.
+                    </p>
+                    <ul class="check-list">
+                        <li>Real-time pricing recommendations</li>
+                        <li>Inventory and demand awareness</li>
+                        <li>Easy experimentation through a web app</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <div class="section-heading text-center">
+            <div class="section-badge">
+                <i class="bi bi-stars"></i>
+                Why this project matters
+            </div>
+            <h2>Built for <span>intelligent growth</span></h2>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+                    <h4>Learning-based logic</h4>
+                    <p>The agent updates its pricing behavior using reward feedback instead of static rules.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                    <h4>Practical use case</h4>
+                    <p>It is designed for fast-moving environments where both inventory and remaining time matter.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-window-stack"></i></div>
+                    <h4>Accessible experience</h4>
+                    <p>The web interface keeps the model understandable and easy to interact with for non-technical
+                        users.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

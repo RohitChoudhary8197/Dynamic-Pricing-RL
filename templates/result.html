@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+Result | Dynamic Pricing AI
+{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <div class="section-heading text-center">
+            <div class="section-badge">
+                <i class="bi bi-graph-up-arrow"></i>
+                Recommended outcome
+            </div>
+            <h2>Your pricing strategy is ready</h2>
+            <p>Based on the values you entered, the AI engine has generated a polished recommendation for your next
+                move.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-8">
+                <div class="content-card text-center">
+                    <div class="pricing-display mb-4">
+                        <div class="pricing-icon"><i class="bi bi-currency-rupee"></i></div>
+                        <small>Recommended price</small>
+                        <h2>{{ price }}</h2>
+                        <div class="confidence">
+                            <span>Expected revenue</span>
+                            <strong>{{ revenue }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-4">
+                            <div class="metric-card">
+                                <small>Inventory</small>
+                                <h3>{{ inventory|default('—') }}</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="metric-card">
+                                <small>Days left</small>
+                                <h3>{{ days_left|default('—') }}</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="metric-card">
+                                <small>Strategy</small>
+                                <h3>Balanced</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="/analytics" class="btn btn-primary hero-btn me-2">View analytics</a>
+                        <a href="/contact" class="btn btn-outline-light hero-btn">Talk to the team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact | Dynamic Pricing AI
+{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-badge mb-4">
+                    <i class="bi bi-envelope-open"></i>
+                    Contact us
+                </div>
+                <h1 class="hero-title">Let’s build smarter pricing together.</h1>
+                <p class="hero-description">
+                    Whether you are evaluating a prototype or planning a production-grade pricing system, this platform
+                    can be extended to your business scenario.
+                </p>
+                <div class="contact-list">
+                    <div><i class="bi bi-envelope"></i> support@dynamicpricingai.com</div>
+                    <div><i class="bi bi-geo-alt"></i> Mumbai, India</div>
+                    <div><i class="bi bi-telephone"></i> +91 98765 43210</div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h4 class="mb-3">Send a message</h4>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control custom-input" placeholder="Your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control custom-input" placeholder="you@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control custom-input" rows="4"
+                                placeholder="Tell us about your pricing challenge"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary predict-btn">Send inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
