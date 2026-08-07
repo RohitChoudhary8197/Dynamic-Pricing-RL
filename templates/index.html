@@ -1,3 +1,4 @@
+html
 {% extends "base.html" %}
 
 {% block title %}
@@ -6,16 +7,472 @@ Home | Dynamic Pricing AI
 
 {% block content %}
 
-<div class="container py-5 text-center">
+<!-- ================= HERO SECTION ================= -->
 
-    <h1>Welcome to Dynamic Pricing AI</h1>
+<section class="hero-section">
 
-    <p class="lead">
+    <div class="container">
 
-        Reinforcement Learning based Ticket Pricing System
+        <div class="row align-items-center min-vh-75">
 
-    </p>
+            <!-- Hero Text -->
+            <div class="col-lg-7">
 
-</div>
+                <div class="hero-badge mb-4">
+                    <i class="bi bi-stars"></i>
+                    Powered by Deep Reinforcement Learning
+                </div>
+
+                <h1 class="hero-title">
+                    Smarter Pricing.
+                    <span>Higher Revenue.</span>
+                    Powered by AI.
+                </h1>
+
+                <p class="hero-description">
+                    Optimize ticket pricing dynamically using a
+                    Deep Q-Network trained to make intelligent
+                    pricing decisions based on inventory and
+                    remaining time.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#prediction"
+                       class="btn btn-primary btn-lg hero-btn">
+                        <i class="bi bi-robot me-2"></i>
+                        Try AI Pricing
+                    </a>
+
+                    <a href="/analytics"
+                       class="btn btn-outline-light btn-lg ms-2">
+                        <i class="bi bi-bar-chart-line me-2"></i>
+                        View Analytics
+                    </a>
+
+                </div>
+
+                <div class="hero-tech mt-4">
+
+                    <span>
+                        <i class="bi bi-check-circle-fill"></i>
+                        PyTorch
+                    </span>
+
+                    <span>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Gymnasium
+                    </span>
+
+                    <span>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Flask
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI Visualization -->
+            <div class="col-lg-5 mt-5 mt-lg-0">
+
+                <div class="ai-visual-card">
+
+                    <div class="ai-card-header">
+
+                        <div>
+                            <small>AI PRICING ENGINE</small>
+                            <h5>Live Recommendation</h5>
+                        </div>
+
+                        <div class="ai-status">
+                            <span></span>
+                            ONLINE
+                        </div>
+
+                    </div>
+
+                    <div class="pricing-display">
+
+                        <div class="pricing-icon">
+                            <i class="bi bi-currency-rupee"></i>
+                        </div>
+
+                        <small>RECOMMENDED PRICE</small>
+
+                        <h2>₹4,500</h2>
+
+                        <div class="confidence">
+                            <span>AI Confidence</span>
+                            <strong>94%</strong>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div></div>
+                        </div>
+
+                    </div>
+
+                    <div class="ai-metrics">
+
+                        <div>
+                            <small>Inventory</small>
+                            <strong>82</strong>
+                        </div>
+
+                        <div>
+                            <small>Days Left</small>
+                            <strong>15</strong>
+                        </div>
+
+                        <div>
+                            <small>Demand</small>
+                            <strong>High</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <div>
+                        <h3>+18%</h3>
+                        <p>Revenue Optimization</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-cpu"></i>
+                    </div>
+
+                    <div>
+                        <h3>DQN</h3>
+                        <p>AI Pricing Model</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+
+                    <div>
+                        <h3>5,000+</h3>
+                        <p>Training Episodes</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-currency-rupee"></i>
+                    </div>
+
+                    <div>
+                        <h3>5</h3>
+                        <p>Price Levels</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PREDICTION SECTION ================= -->
+
+<section id="prediction" class="prediction-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <div class="section-badge">
+                <i class="bi bi-robot"></i>
+                AI Prediction Engine
+            </div>
+
+            <h2>
+                Find the <span>Optimal Price</span>
+            </h2>
+
+            <p>
+                Enter your current inventory and remaining days.
+                Our trained DQN agent will recommend the optimal
+                pricing strategy.
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="prediction-card">
+
+                    <form action="/predict"
+                          method="POST"
+                          id="predictionForm">
+
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    <i class="bi bi-box-seam me-2"></i>
+                                    Remaining Inventory
+
+                                </label>
+
+                                <input
+                                    type="number"
+                                    class="form-control custom-input"
+                                    name="inventory"
+                                    min="1"
+                                    max="100"
+                                    placeholder="e.g. 80"
+                                    required
+                                >
+
+                                <small>
+                                    Number of tickets currently available.
+                                </small>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    <i class="bi bi-calendar3 me-2"></i>
+                                    Days Remaining
+
+                                </label>
+
+                                <input
+                                    type="number"
+                                    class="form-control custom-input"
+                                    name="days_left"
+                                    min="1"
+                                    max="30"
+                                    placeholder="e.g. 15"
+                                    required
+                                >
+
+                                <small>
+                                    Number of days before departure.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary predict-btn mt-4"
+                            id="predictButton">
+
+                            <i class="bi bi-magic me-2"></i>
+
+                            Predict Optimal Price
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <div class="section-badge">
+                <i class="bi bi-stars"></i>
+                Intelligent Pricing
+            </div>
+
+            <h2>
+                Built for <span>Smarter Decisions</span>
+            </h2>
+
+            <p>
+                The system combines reinforcement learning,
+                demand simulation and real-time decision making.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-3">
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-cpu-fill"></i>
+                    </div>
+
+                    <h4>Deep Q-Network</h4>
+
+                    <p>
+                        A PyTorch-based DQN learns pricing policies
+                        by interacting with a simulated dynamic
+                        pricing environment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h4>Revenue Optimization</h4>
+
+                    <p>
+                        The agent learns to balance price,
+                        demand and remaining inventory to maximize
+                        total revenue.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                    </div>
+
+                    <h4>Real-Time Decisions</h4>
+
+                    <p>
+                        Given the current inventory and remaining
+                        days, the trained model can recommend a
+                        pricing action instantly.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section class="technology-section">
+
+    <div class="container text-center">
+
+        <div class="section-badge">
+            <i class="bi bi-code-slash"></i>
+            Technology Stack
+        </div>
+
+        <h2>
+            Powered by Modern <span>AI Technologies</span>
+        </h2>
+
+        <div class="tech-list mt-4">
+
+            <span><i class="bi bi-filetype-py"></i> Python</span>
+
+            <span><i class="bi bi-fire"></i> PyTorch</span>
+
+            <span><i class="bi bi-controller"></i> Gymnasium</span>
+
+            <span><i class="bi bi-server"></i> Flask</span>
+
+            <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
