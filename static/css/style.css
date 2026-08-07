@@ -4,13 +4,14 @@ css
 ========================================= */
 
 :root {
-    --primary: #4f8cff;
-    --primary-light: #7aa7ff;
-    --dark: #070b17;
-    --dark-card: rgba(18, 26, 48, 0.72);
-    --text: #f4f7ff;
-    --muted: #9ca9c7;
-    --border: rgba(255, 255, 255, 0.1);
+    --primary: #5b8cff;
+    --primary-light: #8fb3ff;
+    --dark: #060912;
+    --dark-card: rgba(12, 18, 33, 0.9);
+    --text: #f5f7ff;
+    --muted: #b2bfdc;
+    --border: rgba(255, 255, 255, 0.12);
+    --soft-bg: #0d1427;
 }
 
 html {
@@ -20,7 +21,7 @@ html {
 body {
     margin: 0;
     background:
-        linear-gradient(135deg, #040816 0%, #09142a 45%, #03060d 100%);
+        linear-gradient(135deg, #050816 0%, #0b1428 45%, #04070f 100%);
     color: var(--text);
     font-family: Inter, Arial, Helvetica, sans-serif;
     line-height: 1.6;
@@ -34,7 +35,7 @@ body::after {
     inset: 0;
     background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 46px 46px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 90%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 95%);
     pointer-events: none;
     z-index: -1;
 }
@@ -44,8 +45,8 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(circle at 15% 20%, rgba(79, 140, 255, 0.16), transparent 24%),
-        radial-gradient(circle at 85% 15%, rgba(138, 92, 246, 0.16), transparent 22%),
+        radial-gradient(circle at 15% 20%, rgba(91, 140, 255, 0.16), transparent 24%),
+        radial-gradient(circle at 85% 15%, rgba(154, 111, 255, 0.16), transparent 22%),
         radial-gradient(circle at 50% 100%, rgba(84, 220, 139, 0.08), transparent 30%);
     pointer-events: none;
     z-index: -1;
@@ -71,11 +72,11 @@ a {
 ========================================= */
 
 .navbar {
-    background: rgba(7, 11, 23, 0.88) !important;
+    background: rgba(6, 10, 20, 0.9) !important;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 16px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
@@ -109,9 +110,9 @@ a {
     overflow: hidden;
     padding: 90px 0;
     background:
-        linear-gradient(135deg, rgba(79, 140, 255, 0.12), transparent 35%),
-        radial-gradient(circle at 20% 20%, rgba(79, 140, 255, 0.18), transparent 35%),
-        radial-gradient(circle at 85% 60%, rgba(112, 70, 255, 0.14), transparent 35%),
+        linear-gradient(135deg, rgba(91, 140, 255, 0.12), transparent 35%),
+        radial-gradient(circle at 20% 20%, rgba(91, 140, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 85% 60%, rgba(154, 111, 255, 0.14), transparent 35%),
         var(--dark);
 }
 
@@ -182,8 +183,8 @@ a {
 }
 
 .hero-description {
-    color: var(--muted);
-    font-size: 1.1rem;
+    color: #d7e2f7;
+    font-size: 1.08rem;
     line-height: 1.8;
     max-width: 650px;
 }
@@ -223,14 +224,14 @@ a {
 ========================================= */
 
 .ai-visual-card {
-    background: var(--dark-card);
-    border: 1px solid var(--border);
+    background: linear-gradient(145deg, rgba(15, 22, 40, 0.97), rgba(8, 13, 24, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(20px);
     border-radius: 25px;
     padding: 25px;
     box-shadow:
         0 25px 70px rgba(0, 0, 0, 0.4),
-        0 0 50px rgba(79, 140, 255, 0.08);
+        0 0 55px rgba(91, 140, 255, 0.08);
 }
 
 .ai-visual-card:hover,
@@ -361,7 +362,7 @@ a {
 
 .stats-section {
     padding: 35px 0;
-    background: #090f20;
+    background: #090d1b;
 }
 
 .stat-card {
@@ -435,7 +436,7 @@ a {
 }
 
 .section-heading p {
-    color: var(--muted);
+    color: #dce4f7;
     line-height: 1.7;
 }
 
@@ -452,8 +453,8 @@ a {
 }
 
 .prediction-card {
-    background: linear-gradient(145deg, rgba(17, 25, 44, 0.95), rgba(10, 16, 30, 0.9));
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(145deg, rgba(15, 22, 40, 0.97), rgba(8, 13, 24, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 25px;
     padding: 35px;
     backdrop-filter: blur(20px);
@@ -513,8 +514,8 @@ a {
 .feature-card {
     height: 100%;
     padding: 30px;
-    background: linear-gradient(145deg, rgba(17, 25, 44, 0.95), rgba(10, 16, 30, 0.9));
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(145deg, rgba(15, 22, 40, 0.97), rgba(8, 13, 24, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
     transition: 0.3s;
 }
@@ -543,7 +544,7 @@ a {
 }
 
 .feature-card p {
-    color: var(--muted);
+    color: #dce4f7;
     line-height: 1.7;
 }
 
