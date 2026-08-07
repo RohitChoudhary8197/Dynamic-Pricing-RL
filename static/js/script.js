@@ -25,4 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
             item.style.transform = "translateY(0)";
         }, 90 * index);
     });
+
+    const cards = document.querySelectorAll(".feature-card, .stat-card, .metric-card, .content-card, .prediction-card");
+    cards.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            card.classList.add("is-hovered");
+        });
+        card.addEventListener("mouseleave", () => {
+            card.classList.remove("is-hovered");
+        });
+    });
 });
